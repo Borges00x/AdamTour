@@ -1,0 +1,19 @@
+nav {
+    border: 2px black solid;
+    overflow: auto;
+    width: 100%;
+    background-color: yellow;
+}
+
+nav .logo img {
+    width: 15%;
+    float: left;
+}
+
+nav a {
+    float: right;
+    margin-top: 5em;
+    padding-right: 50px;
+    text-transform: uppercase;
+}
+

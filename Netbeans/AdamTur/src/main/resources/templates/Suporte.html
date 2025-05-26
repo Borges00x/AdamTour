@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/Suporte.css" rel="stylesheet"/>
+    <link href="css/navbar.css" rel="stylesheet"/>
+    <title>Suporte</title>
+</head>
+<body>
+    <header th:replace="navbar.html :: nav"></header>
+    <main>
+        <form id="formSuporte">
+            <div class="titulo">
+                <h1>Suporte</h1>
+            </div>
+            <div class="subtitulo">
+                <p>Entre em contato conosco:</p>
+            </div>
+
+            <div class="campo">
+                <textarea id="mensagem" name="mensagem" rows="5" cols="40" placeholder="Digite sua mensagem" required></textarea>
+            </div>
+
+            <div class="botao">
+                <input type="submit" class="enviar" value="Enviar"/>
+            </div>
+        </form>
+
+        <div id="status"></div>
+    </main>
+
+    <footer>
+        <div class="rodape">
+            <img src="imagem/logomarca.jpeg"/>
+            <div class="rodapelabel">
+                <label class="titulo">E-mail</label><br/>
+                <label>adamtourviagens@gmail.com</label><br/>
+                <label class="titulo">Telefone</label><br/>
+                <label>(21)90239487</label><br/>
+                <label class="titulo">Cidade</label><br/>
+                <label>Rio de Janeiro - RJ</label><br/>
+                <label class="titulo">Instagram</label><br/>
+                <label>AdamTour</label>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para envio da mensagem -->
+    <script>
+        document.getElementById('formSuporte').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const mensagem = document.getElementById('mensagem').value.trim();
+
+            if (!mensagem) {
+                document.getElementById('status').innerText = "Por favor, preencha todos os campos.";
+                return;
+            }
+
+            const dados = {
+                mensagem: mensagem
+            };
+
+            fetch('/cliente/suporte', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dados)
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('status').innerText = "Mensagem enviada com sucesso!";
+                    document.getElementById('formSuporte').reset();
+                } else {
+                    response.text().then(text => {
+                        document.getElementById('status').innerText = "Erro ao enviar mensagem: " + text;
+                    });
+                }
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = "Erro: " + error.message;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+/* barra de pesquisa */
+
+main .busca {
+    border: 2px black solid;
+    margin-top: 4em;
+    padding: 30px;
+    font-size: 20px;
+    background-color: blueviolet;
+}
+
+main .busca #pesquisa {
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+main .busca .buscar {
+    font-size: 20px;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+/* imagens */
+
+h1 {
+    margin-left: 2em;
+    font-size: 4em;
+}
+
+h2 {
+    margin-left: 11.5em;
+    font-size: 2.5em;
+}
+
+
+main .turismo img {
+    width: 22%;
+    margin-left: 2em;
+}
+
+main .ofertas {
+    display: flex;
+    margin-bottom: 6em;
+}
+
+main .oferta {
+    border: 2px black solid;
+    width: 35%;
+    background-color: blue;
+}
+
+main .oferta img {
+    margin-top: 2em;
+    margin-left: 2.5em;
+}
+
+main .oferta h4, main .oferta p, main .oferta .comprar {
+    margin-left: 2em;
+    font-size: 2em;
+}
+
+main .oferta .comprar {
+    margin-bottom: 2em;
+}
+
+/* Rodapé */
+
+footer {
+    border: 2px black solid;
+    width: 100%;
+    background-color: yellow;
+}
+
+footer .rodape img {
+    width: 20%;
+    display: inline-block;
+}
+
+footer .rodapelabel {
+    padding: 20px;
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    text-align: center;
+    
+}
+
+footer .rodapelabel label {
+    display: block;
+}
+
+footer .rodapelabel .titulo {
+    font-size: 1.5em;
+}

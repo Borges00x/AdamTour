@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="css/ListaClientes.css" rel="stylesheet">
+            <link href="css/navbar.css" rel="stylesheet"/>
+        </head>
+        <body>
+            <header th:replace="navbar.html :: nav"></header>
+            </header>
+            <main>
+                <div>
+                    <h1>Lista de clientes cadastrados</h1>
+                </div>
+                <div class="Pesquisa">
+                    <label>Pesquisar por cpf:</label>
+                    <input type="text" id="inputCpf" class="cpf" name="cpf" placeholder="XXX.XXX.XXX-YY"/>
+                </div>
+                <div>
+                    <table border="2">
+                        <thead>
+                            <tr>
+                                <th colspan="10">Dados dos Clientes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaClientesBody">
+                            <tr class="titulo">
+                                <td>Id</td>
+                                <td>Nome</td>
+                                <td>Cpf</td>
+                                <td>Rg</td>
+                                <td>Telefone</td>
+                                <td>E-mail</td>
+                                <td>Estado</td>
+                                <td>Cidade</td>
+                                <td>Bairro</td>
+                                <td>Rua</td>
+                                <td>Cep</td>
+                            </tr>
+                            <tr th:each="clientes :${cliente}">
+                                 <td th:text="${clientes.id}"></td>
+                                 <td th:text="${clientes.nome}"></td>
+                                 <td th:text="${clientes.cpf}"></td>
+                                 <td th:text="${clientes.rg}"></td>
+                                 <td th:text="${clientes.telefone}"></td>
+                                 <td th:text="${clientes.email}"></td>
+                                 <td th:text="${clientes.estado}"></td>
+                                 <td th:text="${clientes.cidade}"></td>
+                                 <td th:text="${clientes.bairro}"></td>
+                                 <td th:text="${clientes.rua}"></td>
+                                 <td th:text="${clientes.cep}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="botoes">
+                    <label>Digite o id do cliente:</label>
+                    <input type="text" name="id" class="id" id="idCliente"/>
+                    <input type="submit" class="excluir" id="btnExcluir" value="Excluir">
+                    <input type="submit" class="editar" id="btnEditar" value="Editar">
+                </div>
+                <script src="js/listaClientes.js"></script>
+            </main>
+            <footer>
+                <div class="rodape">
+                    <img src="imagem/logomarca.jpeg"/>
+                    <div class="rodapelabel">
+                            <label class="titulo">E-mail</label>
+                        </br>
+                            <label>adamtourviagens@gmail.com</label>
+                        </br>
+                            <label class="titulo">Telefone</label>
+                        </br>
+                            <label>(21)90239487</label>
+                        </br>
+                            <label class="titulo">Cidade</label>
+                        </br>
+                            <label>Rio de Janeiro - RJ</label>
+                        </br>
+                            <label class="titulo">Instagram</label>
+                        </br>
+                            <label>AdamTour</label>
+                    </div>
+                </div>
+            </footer>
+        </body>
+    </html>

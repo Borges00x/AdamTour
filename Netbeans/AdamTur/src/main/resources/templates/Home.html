@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="css/Home.css" rel="stylesheet"/>
+            <link href="css/navbar.css" rel="stylesheet"/>
+        </head>
+        <body>
+            <header th:replace="navbar.html :: nav"></header>
+            <main>
+                <h1>As melhores ofertas é você só encontra aqui</h1>
+        <div class="busca">
+            <form id="filtroPassagensForm" action="/tabelaviagens" method="get">
+                <label>Origem:</label>
+                <input type="text" name="origem" id="origemPesquisa" class="origem"/>
+
+                <label>Destino:</label>
+                <input type="text" name="destino" id="destinoPesquisa" class="destino"/>
+
+                <label>Data de ida:</label>
+                <input type="date" name="dataIda" id="dataIdaPesquisa" class="ida" min="1990-01-01" max="2025-12-31"/>
+                <span id="ida-erro" class="erro-mensagem"></span>
+
+                <label>Data de volta:</label>
+                <input type="date" name="dataVolta" id="dataVoltaPesquisa" class="volta" min="1990-01-01" max="2025-12-31"/>
+                <span id="volta-erro" class="erro-mensagem"></span>
+
+                <input type="submit" class="buscar" value="Buscar"/>
+            </form>
+        </div>      
+                </div>
+                <div class="turismo">
+                    <h2>Conheça nossos destinos exclusivos:</h2>
+
+                        <img src="imagem/imagem.jpeg" width="1275" height="250"/>
+
+                        <img src="imagem/imagem2.jpg" width="1275" height="250"/>
+
+                        <img src="imagem/imagem3.jpeg" width="1275" height="250"/>
+                        
+                        <img src="imagem/imagem4.jpeg" width="1275" height="250"/>
+                </div>
+                        <h2>Veja algumas de nossas ofertas:</h2>
+                <div class="ofertas">
+                    
+                    <form class="oferta">
+                        <img src="imagem/oferta.jpg" width="400" height="250"/>
+                        <h4>Viagem para Brasília</h4>
+                        <p class="origem">Saindo do Rio de Janeiro</p>
+                        <p class="preço">R$ 900</p>
+                        <input type="submit" class="comprar" value="Comprar"/>
+                    </form>
+                    <form class="oferta">
+                        <img src="imagem/oferta2.jpeg" width="400" height="250"/>
+                        <h4>Viagem para New York</h4>
+                        <p class="origem">Saindo de São Paulo</p>
+                        <p class="preço">R$ 1.400</p>
+                        <input type="submit" class="comprar" value="Comprar"/>
+                    </form>
+                    <form class="oferta">
+                        <img src="imagem/oferta3.jpeg" width="400" height="250"/>
+                        <h4>Viagem para Tokyo</h4>
+                        <p class="origem">Saindo do Rio de Janeiro</p>
+                        <p class="preço">R$ 1.700</p>
+                        <input type="submit" class="comprar" value="Comprar"/>
+                    </form>
+                </div>
+            </main>
+            <script src="/js/home.js"></script>
+            <footer>
+                <div class="rodape">
+                    <img src="imagem/logomarca.jpeg"/>
+                    <div class="rodapelabel">
+                            <label class="titulo">E-mail</label>
+                        </br>
+                            <label>adamtourviagens@gmail.com</label>
+                        </br>
+                            <label class="titulo">Telefone</label>
+                        </br>
+                            <label>(21)90239487</label>
+                        </br>
+                            <label class="titulo">Cidade</label>
+                        </br>
+                            <label>Rio de Janeiro - RJ</label>
+                        </br>
+                            <label class="titulo">Instagram</label>
+                        </br>
+                            <label>AdamTour</label>
+                    </div>
+                </div>
+            </footer>
+        </body>
+    </html>
