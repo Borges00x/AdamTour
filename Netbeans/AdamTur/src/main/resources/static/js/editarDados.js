@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputsToValidate = [
         { element: document.getElementById('nome'), errorSpan: null, message: 'O nome é obrigatório.' },
         { element: document.getElementById('rg'), errorSpan: document.getElementById('rg-erro'), message: 'Formato de RG inválido (ex: XX.XXX.XXX-Y ou XX.XXX.XXX-YY).' },
-        { element: document.getElementById('telefone'), errorSpan: document.getElementById('telefone-erro'), message: 'Formato de telefone inválido (ex: (XX) XXXX-XXXX ou (XX) XXXXX-XXXX).' },
+        { element: document.getElementById('telefone'), errorSpan: document.getElementById('telefone-erro'), message: 'Formato de telefone inválido (ex: (XX)XXXX-XXXX ou (XX)XXXXX-XXXX).' },
         { element: document.getElementById('e-mail'), errorSpan: document.getElementById('email-erro'), message: 'Formato de e-mail inválido (ex: seuemail@dominio.com).' },
         { element: document.getElementById('estado'), errorSpan: null, message: 'O estado é obrigatório.' },
         { element: document.getElementById('cidade'), errorSpan: null, message: 'A cidade é obrigatória.' },

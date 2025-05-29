@@ -54,7 +54,7 @@
             const mensagem = document.getElementById('mensagem').value.trim();
 
             if (!mensagem) {
-                document.getElementById('status').innerText = "Por favor, preencha todos os campos.";
+                alert("Por favor, preencha o campo.");
                 return;
             }
 
@@ -71,16 +71,16 @@
             })
             .then(response => {
                 if (response.ok) {
-                    document.getElementById('status').innerText = "Mensagem enviada com sucesso!";
+                    alert("Mensagem enviada com sucesso!");
                     document.getElementById('formSuporte').reset();
                 } else {
                     response.text().then(text => {
-                        document.getElementById('status').innerText = "Erro ao enviar mensagem: " + text;
+                        alert("Erro ao enviar mensagem: " + text);
                     });
                 }
             })
             .catch(error => {
-                document.getElementById('status').innerText = "Erro: " + error.message;
+                alert("Erro: " + error.message);
             });
         });
     </script>
